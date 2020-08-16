@@ -5,3 +5,5 @@ branch can also be added
 if ab >$DATE
   echo $DATE
 fi
+else
+  return
