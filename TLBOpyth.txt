@@ -1,0 +1,53 @@
+#population of random numbers in range(lower limit(ll),upper limit(ul))
+from random import random
+ll,ul,n,pop=[50,100,75],[155,250,200],3,4
+p = [[ll[i]+(ul[i]-ll[i])*random() for i in range(n)] for j in range(pop)]
+print('Intial population')
+for i in range(pop):
+    print(p[i][:])
+def cost():                                             #cost function defn
+    a,b,c,of=[0.1,0.11,0.21],[5,4,9],[1025,1240,2394],[]
+    for i in range(pop):
+        off=0
+        for j in range(n):
+            off=off+(a[j]*(p[i][j]**2)+b[j]*p[i][j]+c[j])
+        of.append(off)
+    print('Obj function:\n',of)
+    return of
+#find teacher location
+of=cost()
+t=0
+for i in range(pop):
+    if of[t]>=of[i]:
+        t=i
+print('Teachers location in popoulation:',t)
+#mean of the population
+pm=[]
+for i in range(n):
+    s=0
+    for j in range(pop):
+        s=s+p[j][i]
+    s=s/pop
+    pm.append(s)
+tf=[round(random())+1 for i in range(n)]                #Teaching Factor
+dtm=[random()*p[t][i]-tf[i]*pm[i] for i in range(n)]    #Teaching compo calc
+print('teaching compo:\n',dtm)                          #Add Teach Compo to all
+p=[[p[j][i]+dtm[i] for i in range(n)] for j in range(pop)]
+print('After teacher phase:')
+for i in range(pop):                                    #print
+    print(p[i][:])
+of=cost()
+st=[round(random()*pop-1) for i in range(pop)]          #pick students
+print('Students picked:',st)
+for j in range(pop):                                    #Student Phase
+    for i in range(n):
+        if of[j]<of[st[j]]:
+            p[j][i]=p[j][i]+(random()*p[j][i]-p[st[j]][i])
+        else:
+            p[j][i]=p[j][i]+(random()*p[st[j]][i]-p[j][i])
+print('After student phase:')
+for i in range(pop):
+    print(p[i][:])
+of=cost()
+    
+        

@@ -1,0 +1,165 @@
+clear all
+clc
+pop=20;
+maxitt=1000;
+cost=[0.00156 7.92 561
+      0.00194 7.85 310
+      0.00482 7.97 78];
+mwlimits=[100 600
+          100 400
+          50 200];
+ss=size(cost);
+ng=ss(1);
+B=0.0001*[0.75 0.05 0.075
+    0.05 0.15 0.1
+    0.075 0.1 0.45];
+penalty=100000;
+pd=600;
+a=cost(:,1);
+b=cost(:,2);
+c=cost(:,3);
+pmin=mwlimits(:,1); 
+pmax=mwlimits(:,2); 
+for i=1:pop
+    for j=1:ng
+        p(i,j)=pmin(j)+(pmax(j)-pmin(j))*rand();
+    end
+end
+for i=1:pop
+    sp(i)=sum(p(i,:));
+end
+for j=1:pop
+    pl(j)=p(j,:)*B*p(j,:)';
+    for i=1:ng
+        F(i)=(a(i)*(p(j,i))^2+b(i)*p(j,i)+c(i));
+    end
+    total(j)=sum(F)+penalty*(abs(sp(j)-pd-pl(j)));
+end
+
+
+for itt=1:maxitt
+    for i=1:ng
+        MEAN(i)=mean(p(:,i));
+    end
+    t=total(1)
+    for i=1:pop-1
+        if total(i+1)<t
+            t=total(i+1);
+            tloc=i+1;
+        end
+    end
+    for i=1:ng
+        if (rand()<0.5)
+            tk=1;
+        else
+            tk=2;
+        end
+        dm(i)=rand()*(p(tloc,i)-(tk*MEAN(i)));
+    end
+    for j=1:pop
+        for i=1:ng
+            pnew(j,i)=p(j,i)+dm(i);    
+        end
+    end
+    for i=1:pop
+        spln(i)=sum(pnew(i,:));
+    end
+    for j=1:pop
+        pln(j)=pnew(j,:)*B*pnew(j,:)';
+        for i=1:ng
+            Fnew(i)=(a(i)*(pnew(j,i))^2+b(i)*pnew(j,i)+c(i));
+        end
+        totalnew(j)=sum(Fnew)+penalty*(abs(spln(j)-pd-pln(j)));
+    end
+    flag=0;
+    for j=1:pop
+        if(totalnew(j)<total(j))
+            flag=flag+1;
+            for i=1:ng
+                cp(j,i)=pnew(j,i);
+              totalcp(j)= totalnew(j);
+            end
+        else
+            for i=1:ng
+                cp(j,i)=p(j,i);
+               totalcp(j)= total(j);
+            end
+        end
+    end
+    for j=1:pop
+        k=ceil(rand()*pop);
+        if (totalcp(j)<totalcp(k))
+            for i=1:ng
+                lcp(j,i)=cp(j,i)+(rand()*(cp(j,i)-cp(k,i)));            
+            end
+        else
+            for i=1:ng
+                lcp(j,i)=cp(j,i)+(rand()*(cp(k,i)-cp(j,i)));
+            end
+        end
+        if (k==0||k==j)
+            j=j-1;
+        end
+    end
+    for i=1:pop
+        slcp(i)=sum(lcp(i,:));
+    end
+    for j=1:pop
+        plcp(j)=lcp(j,:)*B*lcp(j,:)';
+        for i=1:ng
+                F(i)=a(i)*(lcp(j,i))^2+b(i)*lcp(j,i)+c(i);
+        end
+        totallcp(j)=sum(F)+penalty*(abs(slcp(j)-pd-plcp(j)));
+    end 
+    for j=1:pop
+        if(totallcp(j)<totalcp(j))
+            for i=1:ng
+                clcp(j,i)=lcp(j,i);
+                totalclcp(j)= totallcp(j);
+            end
+        else
+            for i=1:ng
+                clcp(j,i)=cp(j,i);
+               totalclcp(j)= totalcp(j);
+            end
+        end
+    end
+     for j=1:pop
+        for i=1:ng
+            if clcp(j,i)<pmin(i)
+               clcp(j,i)=pmin(i);
+            elseif clcp(j,i)>pmax(i)
+               clcp(j,i)=pmax(i);
+            end 
+        end
+    end
+    p=clcp;
+    total=totalclcp;
+    optcostit(itt)=min(totalclcp);
+end
+optimalcost=totalclcp(1);
+optloc=0;
+for j=1:pop-1
+    if(optimalcost>=totalclcp(j+1))
+        optimalcost=totalclcp(j+1);
+        optloc=j+1;
+   end     
+end
+if optloc==0
+    optloc=1;
+end
+for i=1:ng
+    printf("P(%i) = %f\n",i,clcp(optloc,i));
+end
+for i=1:ng
+    cost(i)=a(i)*(clcp(optloc,i))^2+b(i)*clcp(optloc,i)+c(i);
+end
+optimalcost=sum(cost);
+printf("optimal cost = %f $/Hr\n",optimalcost);
+spo=sum(clcp(optloc,:));
+plo=clcp(optloc,:)*B*clcp(optloc,:)';
+err=spo-pd-plo;
+printf("Real power loss = %f\n",plo);
+printf("population size = %i & iterations = %i\n", pop, maxitt);
+printf("error = %f",err);
+plot(optcostit(1:itt));  
