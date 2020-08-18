@@ -94,9 +94,3 @@ for it in range(100):
                 pst[i][j] = p[i][j]+random()*(p[i][j]-ps[i][j])
             if of[i] > ofs[i]:
                 pst[i][j] = p[i][j]+random()*(ps[i][j]-p[i][j])
-    print(pst)
-    of = cost(p)
-    ofst = cost(pst)
-    p = update(p, pst)
-    p = check_lim()
-    of = cost(p)
