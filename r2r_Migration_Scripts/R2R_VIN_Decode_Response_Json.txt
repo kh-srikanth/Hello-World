@@ -1,0 +1,260 @@
+[
+    {
+        "prodTypeCode": "MOT",
+        "features": [
+            {
+                "trimId": 641,
+                "value": "2004",
+                "featureAttributeName": "Year",
+                "featureAttribId": 10004,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 641,
+                "value": "Moto Guzzi",
+                "featureAttributeName": "Manufacturer",
+                "featureAttribId": 10005,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 641,
+                "value": "V11",
+                "featureAttributeName": "Model Name",
+                "featureAttribId": 10006,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 641,
+                "value": "Le Mans",
+                "featureAttributeName": "Trim Name",
+                "featureAttribId": 10007,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 641,
+                "value": "Standard",
+                "featureAttributeName": "Generic Type (Primary)",
+                "featureAttribId": 10011,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 641,
+                "value": "24",
+                "featureAttributeName": "Warranty (Months)",
+                "featureAttribId": 20004,
+                "featureName": "Price",
+                "featureCategory": "PRICING"
+            },
+            {
+                "trimId": 641,
+                "value": "V Twin",
+                "featureAttributeName": "Engine Type",
+                "featureAttribId": 30003,
+                "featureName": "Engine",
+                "featureCategory": "ENGINE"
+            },
+            {
+                "trimId": 641,
+                "value": "1064",
+                "featureAttributeName": "Displacement (cc)",
+                "featureAttribId": 30020,
+                "featureName": "Engine",
+                "featureCategory": "ENGINE"
+            }
+        ],
+        "trimPhoto": "2004_MotoGuzzi_V11_LeMans.jpg",
+        "photos": {
+            "140x70": "https://api.wantfacts.com:8000/photoapi/101/641/trim/140x70",
+            "400x200": "https://api.wantfacts.com:8000/photoapi/101/641/trim/400x200",
+            "800x400": "https://api.wantfacts.com:8000/photoapi/101/641/trim/800x400",
+            "200x100": "https://api.wantfacts.com:8000/photoapi/101/641/trim/200x100",
+            "300x150": "https://api.wantfacts.com:8000/photoapi/101/641/trim/300x150"
+        },
+        "makeName": "Moto Guzzi",
+        "modelYear": 2004,
+        "prodTypeName": "Motorcycle / Scooter",
+        "modelName": "V11",
+        "trimName": "Le Mans",
+        "makeId": 22,
+        "trimId": 641,
+        "MSRP": "11990",
+        "modelId": 226
+    },
+    {
+        "prodTypeCode": "MOT",
+        "features": [
+            {
+                "trimId": 642,
+                "value": "2004",
+                "featureAttributeName": "Year",
+                "featureAttribId": 10004,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 642,
+                "value": "Moto Guzzi",
+                "featureAttributeName": "Manufacturer",
+                "featureAttribId": 10005,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 642,
+                "value": "V11",
+                "featureAttributeName": "Model Name",
+                "featureAttribId": 10006,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 642,
+                "value": "Le Mans Rosso Corsa",
+                "featureAttributeName": "Trim Name",
+                "featureAttribId": 10007,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 642,
+                "value": "Standard",
+                "featureAttributeName": "Generic Type (Primary)",
+                "featureAttribId": 10011,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 642,
+                "value": "24",
+                "featureAttributeName": "Warranty (Months)",
+                "featureAttribId": 20004,
+                "featureName": "Price",
+                "featureCategory": "PRICING"
+            },
+            {
+                "trimId": 642,
+                "value": "V Twin",
+                "featureAttributeName": "Engine Type",
+                "featureAttribId": 30003,
+                "featureName": "Engine",
+                "featureCategory": "ENGINE"
+            },
+            {
+                "trimId": 642,
+                "value": "1064",
+                "featureAttributeName": "Displacement (cc)",
+                "featureAttribId": 30020,
+                "featureName": "Engine",
+                "featureCategory": "ENGINE"
+            }
+        ],
+        "trimPhoto": "2004_MotoGuzzi_V11_LeMansRossoCorsa.jpg",
+        "photos": {
+            "140x70": "https://api.wantfacts.com:8000/photoapi/101/642/trim/140x70",
+            "400x200": "https://api.wantfacts.com:8000/photoapi/101/642/trim/400x200",
+            "800x400": "https://api.wantfacts.com:8000/photoapi/101/642/trim/800x400",
+            "200x100": "https://api.wantfacts.com:8000/photoapi/101/642/trim/200x100",
+            "300x150": "https://api.wantfacts.com:8000/photoapi/101/642/trim/300x150"
+        },
+        "makeName": "Moto Guzzi",
+        "modelYear": 2004,
+        "prodTypeName": "Motorcycle / Scooter",
+        "modelName": "V11",
+        "trimName": "Le Mans Rosso Corsa",
+        "makeId": 22,
+        "trimId": 642,
+        "MSRP": "13990",
+        "modelId": 226
+    },
+    {
+        "prodTypeCode": "MOT",
+        "features": [
+            {
+                "trimId": 643,
+                "value": "2004",
+                "featureAttributeName": "Year",
+                "featureAttribId": 10004,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 643,
+                "value": "Moto Guzzi",
+                "featureAttributeName": "Manufacturer",
+                "featureAttribId": 10005,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 643,
+                "value": "V11",
+                "featureAttributeName": "Model Name",
+                "featureAttribId": 10006,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 643,
+                "value": "Le Mans Nero Corsa",
+                "featureAttributeName": "Trim Name",
+                "featureAttribId": 10007,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 643,
+                "value": "Standard",
+                "featureAttributeName": "Generic Type (Primary)",
+                "featureAttribId": 10011,
+                "featureName": "Identifiers",
+                "featureCategory": "IDENTIFICATION"
+            },
+            {
+                "trimId": 643,
+                "value": "24",
+                "featureAttributeName": "Warranty (Months)",
+                "featureAttribId": 20004,
+                "featureName": "Price",
+                "featureCategory": "PRICING"
+            },
+            {
+                "trimId": 643,
+                "value": "V Twin",
+                "featureAttributeName": "Engine Type",
+                "featureAttribId": 30003,
+                "featureName": "Engine",
+                "featureCategory": "ENGINE"
+            },
+            {
+                "trimId": 643,
+                "value": "1064",
+                "featureAttributeName": "Displacement (cc)",
+                "featureAttribId": 30020,
+                "featureName": "Engine",
+                "featureCategory": "ENGINE"
+            }
+        ],
+        "trimPhoto": "2004_MotoGuzzi_V11_LeMansNeroCorsa.jpg",
+        "photos": {
+            "140x70": "https://api.wantfacts.com:8000/photoapi/101/643/trim/140x70",
+            "400x200": "https://api.wantfacts.com:8000/photoapi/101/643/trim/400x200",
+            "800x400": "https://api.wantfacts.com:8000/photoapi/101/643/trim/800x400",
+            "200x100": "https://api.wantfacts.com:8000/photoapi/101/643/trim/200x100",
+            "300x150": "https://api.wantfacts.com:8000/photoapi/101/643/trim/300x150"
+        },
+        "makeName": "Moto Guzzi",
+        "modelYear": 2004,
+        "prodTypeName": "Motorcycle / Scooter",
+        "modelName": "V11",
+        "trimName": "Le Mans Nero Corsa",
+        "makeId": 22,
+        "trimId": 643,
+        "MSRP": "13990",
+        "modelId": 226
+    }
+]
