@@ -1,0 +1,16 @@
+insert into account 
+( _id,accountname, accountstatus, accounttype, createdate, phone, state, updatedate, updatetime, src_dealer_code,r2r_source_id)
+select 
+cast(dealer_guid as uuid),dealer_name,'active',account_type,current_date ,dealer_phone,dealer_state_code,current_date, current_time, acct_center_code, cast(dealer_id as bigint)
+from r2rdealer_del where dealer_id in ('48839','48840')
+order by rnk,level
+
+
+
+select 
+a.account_id, a._id, a.accountname, a.parentid, d._id, d.accounttype,d.accountname
+from account a 
+inner join r2rdealer_del b on  cast(b.dealer_id as bigint)  = a.r2r_source_id
+inner join r2rdealer_del c on  b.parent_dealer_id = c.dealer_id
+inner join account d on cast(c.dealer_id as bigint) = d.r2r_source_id
+ where b.level=2
